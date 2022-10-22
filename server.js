@@ -14,8 +14,20 @@ app.use(bodyParser.json());
 const cors = require("cors");
 app.use(cors());
 
+//connecting database
+const connectDB = require("./DB/connectdb");
+
 //add routes to our server
 const tasks = require("./controllers/routes/tasks-route");
-app.use('/api/v1/tasks', tasks);
+app.use("/api/v1/tasks", tasks);
 
-app.listen(port, console.log(`server is listening on port ${port}`));
+const start = async () => {
+  try {
+    await connectDB();
+    app.listen(port, console.log(`server is listening on port ${port}`));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+start();

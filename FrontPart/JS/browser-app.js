@@ -81,8 +81,18 @@ submitBtn.addEventListener("click", async () => {
 
 // setTimeout(deleteTask, 2000);
 
-tasksDiv.addEventListener("click", (e) => {
-  if (e.target.classlist.contains("deleteTask")) {
-    console.log(10);
+tasksDiv.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("deleteTask")) {
+    try {
+      await fetch(`api/v1/tasks/${e.target.dataset.id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      showTasks();
+    } catch (error) {
+      res.send({ msg: error });
+    }
   }
 });

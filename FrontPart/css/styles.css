@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+body {
+  background-color: cornsilk;
+}
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+.tasksForm,
+.editTask {
+  padding: 20px;
+  box-shadow: 1px 0 9px 0px #7a889c;
+  background-color: cornflowerblue;
+  margin-top: 15%;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 45px;
+  margin-top: 0px;
+  color: white;
+}
+.tasksForm input {
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  outline: 0;
+}
+.tasksForm input:hover {
+  box-shadow: 0 0 10px 0px #9437ff;
+}
+.tasksForm input[type="submit"] {
+  width: 25%;
+  font-weight: bold;
+  cursor: pointer;
+  color: cornflowerblue;
+}
+.tasksForm input[type="text"] {
+  width: 74%;
+  caret-color: cornflowerblue;
+}
+.tasks {
+  margin-top: 50px;
+}
+.container .tasks .no_tasks {
+  text-align: center;
+  color: #bd0000;
+  font-weight: 800;
+  display: block;
+}
+.tasks .task {
+  padding: 12px 20px;
+  background-color: cornflowerblue;
+  margin-top: 18px;
+  box-shadow: 1px 0 9px 0px #7a889c;
+  display: flex;
+  border-radius: 3px;
+  justify-content: space-between;
+}
+.tasks i.fa-pen-to-square {
+  color: #007716;
+}
+i {
+  caret-color: transparent;
+  cursor: pointer;
+}
+.tasks i.fa-trash {
+  color: #b30000;
+  margin-left: 8px;
+}
+.task span:first-of-type {
+  color: white;
+  font-size: x-large;
+}
+
+.editTask .fields .field {
+  display: flex;
+  padding: 7px;
+  font-size: large;
+  font-weight: 700;
+  color: cornsilk;
+}
+.editTask .fields .field label {
+  flex-basis: 30%;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+}
+.editTask input[type="text"] {
+  outline: 0;
+  border: 1px solid wheat;
+  padding: 2px;
+  caret-color: blue;
+}
+.editTask button {
+  width: 100%;
+  padding: 4px;
+  outline: 0;
+  border: 3px solid blue;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  color: blue;
+  margin-top: 15px;
+  font-weight: 900;
+}
+.editTask button:hover {
+  box-shadow: 0 0 5px 1px blue;
+}

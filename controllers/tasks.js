@@ -15,7 +15,7 @@ const getTask = async (req, res) => {
     if (!task) {
       res.status(404).send({ msg: `no task with the id ${req.params.id}` });
     }
-    res.status(200).send({ task });
+    res.status(200).send(task);
   } catch (error) {
     res.status(201).send({ msg: error });
   }
@@ -31,7 +31,7 @@ const updateTask = async (req, res) => {
     if (!task) {
       res.status(404).send({ msg: "not found" });
     }
-    res.status(200).send({ task });
+    res.status(200).send(task);
   } catch (error) {
     res.status(500).send({ msg: error });
   }

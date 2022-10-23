@@ -17,23 +17,29 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Task Manager</title>
+    <title>Task Edit</title>
   </head>
   <body>
     <div class="container">
-      <div class="tasksForm">
-        <h1>Task Manager</h1>
-        <input
-          type="text"
-          placeholder="Type a new task here"
-          name="inputTask"
-        />
-        <input type="submit" value="submit" />
-        <div class="taskStatus"></div>
-      </div>
-      <div class="tasks">
+      <div class="editTask">
+        <h1>Edit Task</h1>
+        <div class="fields">
+          <div class="field">
+            <label for="id">Task ID</label>
+            <span class="id"></span>
+          </div>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" placeholder="Task Name" class="name" />
+          </div>
+          <div class="field">
+            <label for="com">Completed</label>
+            <input type="checkbox" name="completed" class="com" />
+          </div>
+        </div>
+        <button>Edit</button>
       </div>
     </div>
-    <script src="./JS/browser-app.js"></script>
+    <script src="./JS/taskEdit.js"></script>
   </body>
 </html>

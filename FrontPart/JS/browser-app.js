@@ -2,6 +2,7 @@
 const tasksDiv = document.querySelector(".tasks");
 const submitBtn = document.querySelector('.tasksForm input[type="submit"]');
 const inputTaskName = document.querySelector('.tasksForm input[type="text"]');
+const statusSubmit = document.querySelector(".tasksForm .taskStatus");
 
 //get tasks from database and show it
 const showTasks = async () => {
@@ -49,37 +50,17 @@ submitBtn.addEventListener("click", async () => {
       body: JSON.stringify(objTask),
     });
     const task = await tasksRes.json();
+    statusSubmit.innerHTML = `<span>Submited Successfully</span><i class="fa-regular fa-circle-check"></i>`;
   } catch (error) {
     res.status(404).send({ msg: error });
+    statusSubmit.innerHTML = `<span>Error</span><i class="fa-regular fa-triangle-exclamation"></i>`;
   }
   showTasks();
-  inputTaskName.value = "";
+  inputTaskName.value = ``;
+  setTimeout(() => {
+    statusSubmit.innerHTML = ``;
+  }, 3000);
 });
-
-// const deleteTask = () => {
-//   const delIconList = document.querySelectorAll(".deleteTask");
-
-//   delIconList.forEach((delIcon) => {
-//     //delete task
-//     if (delIcon) {
-//       delIcon.addEventListener("click", async () => {
-//         try {
-//           await fetch(`api/v1/tasks/${delIcon.dataset.id}`, {
-//             method: "DELETE",
-//             headers: {
-//               "content-type": "application/json",
-//             },
-//           });
-//           showTasks();
-//         } catch (error) {
-//           res.send({ msg: error });
-//         }
-//       });
-//     }
-//   });
-// };
-
-// setTimeout(deleteTask, 2000);
 
 tasksDiv.addEventListener("click", async (e) => {
   if (e.target.classList.contains("deleteTask")) {
@@ -94,5 +75,11 @@ tasksDiv.addEventListener("click", async (e) => {
     } catch (error) {
       res.send({ msg: error });
     }
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") {
+    submitBtn.click();
   }
 });

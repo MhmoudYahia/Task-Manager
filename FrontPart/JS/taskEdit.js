@@ -7,6 +7,8 @@ const idTaskSpan = document.querySelector("span.id");
 const inputName = document.querySelector('.field input[type="text"]');
 const inputCompleted = document.querySelector('.field input[type="checkbox"]');
 const editBtn = document.querySelector("Button");
+const editStatus = document.querySelector(".editTask .editStatus ");
+const returnBtn = document.querySelector(".fa-circle-arrow-left");
 
 //set id
 idTaskSpan.innerHTML = id;
@@ -31,6 +33,13 @@ const showTask = async () => {
 
 showTask();
 
+inputCompleted.addEventListener("click", () => {
+  if (inputCompleted.checked) {
+    inputCompleted.classList.add("active");
+  } else {
+    inputCompleted.classList.remove("active");
+  }
+});
 //update task
 editBtn.addEventListener("click", async () => {
   try {
@@ -45,8 +54,18 @@ editBtn.addEventListener("click", async () => {
         completed: inputCompleted.checked,
       }),
     });
+    editStatus.innerHTML = `<span>Edited Successfully</span><i class="fa-regular fa-circle-check"></i>`;
   } catch (error) {
     res.status(500).send({ msg: error });
+    editStatus.innerHTML = `<span>Error</span><i class="fa-regular fa-triangle-exclamation"></i>`;
   }
   showTask();
+  setTimeout(() => {
+    editStatus.innerHTML = ``;
+  }, 3000);
+});
+
+//return to main page
+returnBtn.addEventListener("click", () => {
+  window.location.href = `../index.html`;
 });

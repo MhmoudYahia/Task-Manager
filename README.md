@@ -1,5 +1,11 @@
-# Task-Manager
-## Simple task manager that enables you to add a task, edit its data from a its own page and delete the page if you want
+# Task-Manager App
+## Simple task manager that enables you to add a task, edit its data from a its own page and delete the page if you want.
+### Tools 
+- Back-End with Node JS and Express framwork.
+- Front-End with vanilla JavaScript, CSS and HTML.
+- Database with Mongodb.
+- 
+<hr> 
 
 ## Main Page UI
 ![image](https://user-images.githubusercontent.com/94763036/198716498-80818c14-f616-46d3-918f-f7642e83112d.png)

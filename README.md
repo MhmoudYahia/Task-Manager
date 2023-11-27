@@ -1,10 +1,18 @@
 # Task-Manager App
-## Simple task manager that enables you to add a task, edit its data from a its own page and delete the page if you want.
-### Tools 
-- Back-End with Node JS and Express framwork.
-- Front-End with vanilla JavaScript, CSS and HTML.
-- Database with Mongodb.
-- 
+ A simple yet powerful task manager designed to streamline your productivity. Built with precision and efficiency, this task manager allows you to effortlessly add tasks, edit their details on dedicated pages, and delete them at your convenience.
+ 
+## 🧑🏼‍💻 Tech Stack:
+
+- Back-End: Powered by Node.js and Express framework, ensuring a robust and scalable server.
+- Front-End: Crafted with vanilla JavaScript, CSS, and HTML for a clean and intuitive user interface.
+- Database: Utilizes MongoDB to store and manage task data efficiently.
+
+## Key Features:
+
+Task Management: Add tasks seamlessly, keeping your to-do list organized.
+Dedicated Editing: Edit task details with ease, ensuring your information is always up-to-date.
+Effortless Deletion: Remove tasks effortlessly, giving you full control over your task list.
+
 <hr> 
 
 ## Main Page UI
